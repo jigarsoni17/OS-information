@@ -2,8 +2,8 @@
 
 echo -e "Server host Name: `hostname`" > /tmp/os_information.txt
 echo -e "Kernel version: `uname -r`" >> /tmp/os_information.txt
-echo -e "Mounted & Usage : `df -h / | tail -1 | awk '{print $6, $3}'`" >> /tmp/os_information.txt
-echo -e "/swap partition size: `lsblk | grep '[SWAP]' | tail -1 | awk '{print $4}'`" >> /tmp/os_information.txt
+echo -e "Mounted & Usage: `df -h / | tail -1 | awk '{print $6, $3}'`" >> /tmp/os_information.txt
+echo -e "/swap partition Usage: `lsblk | grep '[SWAP]' | tail -1 | awk '{print $4}'`" >> /tmp/os_information.txt
 #echo -e "/home partition size"
 echo -e "load average: `uptime | grep 'load average:'| tail -c 17 `" >> /tmp/os_information.txt
 #echo -e "Lowest load avg: `uptime | grep 'load average:'| tail -c 17 | awk '{print $2}'| cut -f1 -d,`" >> text.txt
