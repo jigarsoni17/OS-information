@@ -8,7 +8,4 @@ echo -e "/swap partition size: `lsblk | grep '[SWAP]' | tail -1 | awk '{print $4
 echo -e "load average: `uptime | grep 'load average:'| tail -c 17 `" >> text.txt
 #echo -e "Lowest load avg: `uptime | grep 'load average:'| tail -c 17 | awk '{print $2}'| cut -f1 -d,`" >> text.txt
 echo -e "Last boot: `who -b | tail -1 | awk '{print $3, $4}'`" >> text.txt
-echo -e "OS `cat /etc/os-release | head -1`" >> text.txt
-
-
-
+echo -e "`cat /etc/os-release | head -6 | tail -1`" && sudo sed -i 's/PRETTY/OS/' /etc/os-release >> text.txt
