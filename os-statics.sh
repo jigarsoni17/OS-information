@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo -e "Server host Name: `hostname`" > text.txt
-echo -e "Kernel version: `uname -r`" >> text.txt
-echo -e "Mounted & Usage : `df -h / | tail -1 | awk '{print $6, $3}'`" >> text.txt
-echo -e "/swap partition size: `lsblk | grep '[SWAP]' | tail -1 | awk '{print $4}'`" >> text.txt
+echo -e "Server host Name: `hostname`" > os_information.txt
+echo -e "Kernel version: `uname -r`" >> os_information.txt
+echo -e "Mounted & Usage : `df -h / | tail -1 | awk '{print $6, $3}'`" >> os_information.txt
+echo -e "/swap partition size: `lsblk | grep '[SWAP]' | tail -1 | awk '{print $4}'`" >> os_information.txt
 #echo -e "/home partition size"
-echo -e "load average: `uptime | grep 'load average:'| tail -c 17 `" >> text.txt
+echo -e "load average: `uptime | grep 'load average:'| tail -c 17 `" >> os_information.txt
 #echo -e "Lowest load avg: `uptime | grep 'load average:'| tail -c 17 | awk '{print $2}'| cut -f1 -d,`" >> text.txt
-echo -e "Last boot: `who -b | tail -1 | awk '{print $3, $4}'`" >> text.txt
-echo -e "`cat /etc/os-release | head -6 | tail -1`" && sudo sed -i 's/PRETTY/OS/' /etc/os-release >> text.txt
+echo -e "Last boot: `who -b | tail -1 | awk '{print $3, $4}'`" >> os_information.txt
+echo -e "`cat /etc/os-release | head -6 | tail -1`" && sudo sed -i 's/PRETTY/OS/' /etc/os-release >> os_information.txt
