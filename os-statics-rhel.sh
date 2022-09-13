@@ -4,7 +4,7 @@ DATE=$(date +%d%m%y)
 
 echo -e "Server host Name: `hostname`" > /tmp/osi-$DATE.txt
 echo -e "Kernel version: `uname -r`" >> /tmp/osi-$DATE.txt
-echo -e "total-Mounted-Usage : `df -h / | tail -1 | awk '{print $2, $3, $6}'`" >> /tmp/osi-$DATE.txt
+echo -e "total-Usage-Mounted : `df -h / | tail -1 | awk '{print $2, $3, $6}'`" >> /tmp/osi-$DATE.txt
 echo -e "/swap partition total-Usage: `free -h | tail -1 | awk '{print $2, $3}'`" >> /tmp/osi-$DATE.txt
 echo -e "load average: `uptime | grep 'load average:'| tail -c 17 `" >> /tmp/osi-$DATE.txt
 echo -e "Last boot: `who -b | tail -1 | awk '{print $3, $4}'`" >> /tmp/osi-$DATE.txt
